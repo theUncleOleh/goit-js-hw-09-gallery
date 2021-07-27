@@ -2,9 +2,7 @@
 import debounce from 'lodash.debounce';
 import trottle from 'lodash.throttle';
 import {galleryContainer} from './js/utils/galleryContainer';
-// import {getModal} from './js/utils/getModal';
-// console.log({galleryContainer});
-//  console.log(getModal);
+import baguetteBox from 'baguettebox.js';
 
 const lightBox = document.querySelector(".js-lightbox");
   const lightBoxOverlay = document.querySelector(".lightbox__overlay");
@@ -52,3 +50,8 @@ const lightBox = document.querySelector(".js-lightbox");
       onCloseModal();
      }
    };
+
+  //  попробуем реализовать слайдер
+  // 1 повесим слушатель на модальное окно
+  //  определим функцию прокрутки вправо и влево
+  // 

@@ -15,13 +15,15 @@
   </head>
   <body>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
+    
     <ul class="gallery js-gallery"></ul>
+    <include src="./partials/lightbox.html"></include>
 
     <!--
       Модальное окно для полноразмерного изображения
       Для того чтобы открыть, необходимо добавить на div.lightbox CSS-класс is-open
     -->
-    <div class="lightbox js-lightbox">
+    <!-- <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
 
       <div class="lightbox__content">
@@ -33,7 +35,7 @@
         class="lightbox__button"
         data-action="close-lightbox"
       ></button>
-    </div>
+    </div> -->
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>
