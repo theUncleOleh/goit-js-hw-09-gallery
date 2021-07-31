@@ -64,18 +64,23 @@ const galleryItems = [
     },
   ];
 
-  
+ 
  export  const galleryContainer = document.querySelector(".js-gallery")
-  console.log(galleryContainer);
+
 
 //  cоздали разметку и загрузили ее на страницу
-const galeryItemList = galleryItems.map( item =>{
+const galeryItemList = galleryItems.map(( item, index) => {
  const createItem = document.createElement('li');
 createItem.classList.add("gallery__item");
+createItem.dataset.index = `${index}`
+// const currentIndex =  createItem.dataset.index;
+// console.log(currentIndex);
+
   const createLink = document.createElement('a');
   createLink.classList.add("gallery__link");
   createLink.href = `${item.preview}` ;
   const createImg = document.createElement('img');
+
   createImg.classList.add("gallery__image");
   createImg.src = `${item.preview}` ;
  createImg.dataset.source = `${item.original}`
@@ -84,8 +89,9 @@ createItem.classList.add("gallery__item");
 
   createLink.appendChild(createImg);
   createItem.appendChild(createLink);
-  // console.log(createItem);
+  console.log(createItem);
 return createItem;
   });
  
   galleryContainer.append(...galeryItemList);
+
