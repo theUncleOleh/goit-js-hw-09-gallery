@@ -21,3 +21,5 @@
 
 //     }
 // }
+// export   const baguetteBox = baguetteBox.run(".gallery");
+// baguetteBox.show(index, gallery[0]);

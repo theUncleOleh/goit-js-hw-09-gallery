@@ -1,36 +1,38 @@
 // import './sass/main.scss';
 import debounce from 'lodash.debounce';
 import trottle from 'lodash.throttle';
-import baguetteBox from 'baguettebox.js';
+// import 'baguettebox.js';
 import {galleryContainer} from './js/utils/galleryContainer';
-// import {arrowImg} from './js/utils/arrow';
+// import { baguetteBox } from './js/utils/arrow';
 
+// console.log(baguettebox);
 
-console.log(baguetteBox);
 const lightBox = document.querySelector(".js-lightbox");
   const lightBoxOverlay = document.querySelector(".lightbox__overlay");
   const lightBoxContent = document.querySelector(".lightbox__content");
   const lightBoxImg = document.querySelector(".lightbox__image");
   const lightBoxBtn = document.querySelector(".lightbox__button");
 
- 
+  galleryContainer.addEventListener('click', e => {
+   
+    let currentIndex = document.querySelector("gallery__image[data-index]");
+    console.log(currentIndex.dataset.index);
+  })
 // вешаем обозревателя на клик
   galleryContainer.addEventListener('click', onOpenModal)
   // const currentIndex =  createItem.dataset.index;
   //  открытие модального окна
+//   const gallery = baguetteBox.run('.gallery');
+// baguetteBox.show(index, gallery[0]);
+
    function onOpenModal (event){
      event.preventDefault();
      window.addEventListener('keydown',onEscKeyDown );
      const galeryImage = event.target;
 
-     
- 
-             // console.log(currentIndex);
- 
-    
- 
+// console.log(currentIndex);
 
-     if(galeryImage.nodeName !== 'IMG'){
+  if(galeryImage.nodeName !== 'IMG'){
        return;
      };
      lightBox.classList.add('is-open');
@@ -38,27 +40,34 @@ const lightBox = document.querySelector(".js-lightbox");
    
      lightBoxImg.src = galeryImage.dataset.source;
      lightBoxImg.alt = galeryImage.alt;
-     console.log(lightBoxImg.src);
+    //  console.log(lightBoxImg.src);
+
+  };
     //  const carentActiveImg = document.querySelector("")
-    galleryContainer.addEventListener('keydown', onArrowRight);
+
+
     
-      let currentIndex = galeryImage.index
-     function onArrowRight() {
+//     galleryContainer.addEventListener('keydown', onArrowRight)
+   
+    
+     
+     
+//      function onArrowRight() {
     
 
-         if(currentIndex + 1 > galleryContainer.lenght -1) {
-             currentIndex = 0;
-//  console.log(currentIndex);
-         } else{
-             currentIndex += 1;
-         }
+//          if(currentIndex + 1 > galleryItems.lenght -1) {
+//              currentIndex = 0;
+// //  console.log(currentIndex);
+//          } else{
+//              currentIndex += 1;
+//          }
          
-         ligthBoxImg(
-             galleryContainer[currentIndex].original,
-             galleryContainer[currentIndex].description
-             );
-   } };
-
+//          ligthBoxImg(
+//           galleryItems [currentIndex].original,
+//           galleryItems  [currentIndex].description
+//              );
+//    }; 
+   
    lightBoxBtn.addEventListener('click',onCloseModal,);
 
   function onCloseModal(event){
@@ -84,4 +93,5 @@ const lightBox = document.querySelector(".js-lightbox");
   
    
      
- 
+
+  
