@@ -27,8 +27,15 @@
   },
   "dependencies": {
     "baguettebox.js": "^1.11.1",
+    "gallery": "^1.0.2",
+    "js": "^0.1.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
+    "u": "^0.1.0",
+    "ut": "0.0.1",
+    "uti": "^6.3.12",
+    "utils": "^0.3.1",
+    "uto": "^0.2.0",
     "wallop": "^2.4.1"
   }
 }
